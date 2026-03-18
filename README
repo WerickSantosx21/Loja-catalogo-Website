@@ -1,0 +1,20 @@
+ CarStore - Catálogo Digital de Veículos
+O CarStore é uma aplicação web robusta desenvolvida para a gestão e exibição de catálogos automotivos. O projeto foi construído focando em uma navegação fluida para o usuário e uma estrutura de backend escalável.
+
+📋 Funcionalidades
+Catálogo Dinâmico: Exibição em tempo real de veículos disponíveis.
+
+Rotas Customizadas: Navegação intuitiva entre Home, Catalogo e Contato.
+
+Integração com Banco de Dados: Persistência de dados utilizando SQLAlchemy.
+
+Design Responsivo: Interface limpa e adaptável (CSS Moderno).
+
+🛠️ Tecnologias Utilizadas
+Backend: Flask (Python Framework)
+
+Banco de Dados: SQLite com Flask-SQLAlchemy.
+
+Frontend: HTML5, CSS3 , javaScript e BootStrap(com remoção de marcadores padrão e estilização de menus).
+
+Template Engine: Jinja2 (para renderização dinâmica de páginas).
