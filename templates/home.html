@@ -5,12 +5,27 @@
 </style>
 </head>
 <body>
-        <ul>
+
+     <ul>
             <li><a href="/"> Home </a></li>
             <li><a href="/catalog">Catalog</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
+
+
+    <div id="carrosel">
+        <div class="slides">
+            <img src="{{ url_for ('static', filename='img/img1ferrari.png') }}" alt="Imagem da Ferrari">
+            <img src="{{ url_for ('static', filename='img/img2ferrari.png') }}" alt="Imagem da Ferrari">
+            <img src="{{ url_for ('static', filename='img/img3ferrari.png') }}" alt="Imagem da Ferrari">
+        </div>
+
+    <button class="esquerda">&#10094; </button>
+    <button class="direita">&#10095;</button>
+
+    </div>
+       
 </body>
 
 
