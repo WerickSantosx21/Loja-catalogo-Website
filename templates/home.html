@@ -1,34 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Principal</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
-</style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
+
 <body>
-    <nav class="menu">
-        <ul class="header">
-            <li><a href="/"> Home </a></li>
-            <li><a href="/catalog">Catalog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>    
 
-    <div id="carrosel">
-        <div class="slides">
-            <img src="{{ url_for ('static', filename='img/img1ferrari.png') }}" alt="Imagem da Ferrari">
-            <img src="{{ url_for ('static', filename='img/img2ferrari.png') }}" alt="Imagem da Ferrari">
-            <img src="{{ url_for ('static', filename='img/img3ferrari.png') }}" alt="Imagem da Ferrari">
-        </div>
+<!-- BOTÃO MENU -->
+<div class="menu-btn">☰</div>
+
+<!-- LOGO CENTRAL -->
+<div class="logo-centro">
+    <a href="/">CORVETTE</a>
+</div>
+
+<!-- MENU LATERAL -->
+<div class="menu-lateral">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog">Catalog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</div>
 
 
-    <button class="esquerda">&#10094; </button>
-    <button class="direita">&#10095;</button>
+<div class="video-bg">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+    </video>
 
-    </div>
-       
-</body>
+    <div class="overlay"></div>
+</div>
 
+
+<button class="esquerda">&#10094;</button>
+<button class="direita">&#10095;</button>
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
 </html>
