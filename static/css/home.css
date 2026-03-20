@@ -5,13 +5,6 @@
     font-family: 'montserrat', sans-serif;
 }
 
-body {
-    font-size: 17px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .menu a {
     color: white;
@@ -61,7 +54,7 @@ body {
     font-family: 'montserrat', sans-serif;
 }
 
-#carrosel  {
+#carrossel  {
     height: 100vh;
     position: relative;
     overflow: hidden;
