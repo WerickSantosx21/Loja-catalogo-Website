@@ -1,34 +1,37 @@
 <html>
 <head>
     <title>Principal</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
-</style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
+
 <body>
+
+
     <nav class="menu">
-        
         <ul class="header">
-            <li><a href="/"> Home </a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/catalog">Catalog</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
-    </nav>    
+    </nav>
 
-    <div id="carrosel">
-        <div class="slides">
-            <img src="{{ url_for ('static', filename='img/img1ferrari.png') }}" alt="Imagem da Ferrari">
-            <img src="{{ url_for ('static', filename='img/img2ferrari.png') }}" alt="Imagem da Ferrari">
-            <img src="{{ url_for ('static', filename='img/img3ferrari.png') }}" alt="Imagem da Ferrari">
+    
+    <div class="video-bg">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+        </video>
+
+        <div class="overlay">
+            <h1>FERRARI</h1>
         </div>
+    </div>
 
-    <button class="esquerda">&#10094; </button>
+    
+    <button class="esquerda">&#10094;</button>
     <button class="direita">&#10095;</button>
 
-    </div>
-       
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
-
-
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </html>
