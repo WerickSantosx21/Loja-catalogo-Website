@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Principal</title>
@@ -6,32 +7,38 @@
 
 <body>
 
+<!-- BOTÃO MENU -->
+<div class="menu-btn">☰</div>
 
-    <nav class="menu">
-        <ul class="header">
-            <li><a href="/">Home</a></li>
-            <li><a href="/catalog">Catalog</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+<!-- LOGO CENTRAL -->
+<div class="logo-centro">
+    <a href="/">CORVETTE</a>
+</div>
 
-    
-    <div class="video-bg">
-        <video autoplay muted loop playsinline class="bg-video">
-            <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
-        </video>
+<!-- MENU LATERAL -->
+<div class="menu-lateral">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog">Catalog</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</div>
 
-        <div class="overlay">
-            <h1>FERRARI</h1>
-        </div>
-    </div>
 
-    
-    <button class="esquerda">&#10094;</button>
-    <button class="direita">&#10095;</button>
+<div class="video-bg">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+    </video>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <div class="overlay"></div>
+</div>
+
+
+<button class="esquerda">&#10094;</button>
+<button class="direita">&#10095;</button>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>
