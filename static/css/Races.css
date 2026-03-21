@@ -21,13 +21,18 @@ body {
 }
 
 .card-corvette {
-    background-color: #1a1a1a; 
-    border-radius: 8px; 
-    width: 450px; /* Largura fixa ou use flex: 1 */
-    box-sizing: border-box;
-    overflow: hidden; /* Garante que a imagem não saia da borda arredondada */
-    display: flex;
-    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05); /* Branco bem transparente */
+    backdrop-filter: blur(10px); /* Desfoca o que está atrás */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda bem fina para brilho */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.card-corvette:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); 
 }
 
 /* Container para o texto ter padding sem afetar a imagem */
@@ -74,7 +79,7 @@ body {
 
 .btn-cinza {
     background-color: #4a4a4a; 
-    color: #ffffff; /* Ajustei para branco para ler melhor */
+    color: #ffffff; 
     border: none;
 }
 
