@@ -1,20 +1,31 @@
- CarStore - Catálogo Digital de Veículos
-O CarStore é uma aplicação web robusta desenvolvida para a gestão e exibição de catálogos automotivos. O projeto foi construído focando em uma navegação fluida para o usuário e uma estrutura de backend escalável.
+# 🏎️ Loja-Web
 
-📋 Funcionalidades
-Catálogo Dinâmico: Exibição em tempo real de veículos disponíveis.
+Este é um projeto de catálogo automotivo focado na linha Corvette, desenvolvido com **Python** e **Flask**. O site apresenta um design imersivo, utilizando técnicas modernas de CSS e uma arquitetura de rotas dinâmicas para facilitar a expansão do conteúdo.
 
-Rotas Customizadas: Navegação intuitiva entre Home, Catalogo e Contato.
+## 🚀 Funcionalidades
 
-Integração com Banco de Dados: Persistência de dados utilizando SQLAlchemy.
+- **Navegação Dinâmica:** Sistema de rotas que carrega páginas automaticamente via parâmetros na URL.
+- **Menu Hamburguer:** Interface responsiva com menu lateral deslizante (Glassmorphism).
+- **Design Imersivo:** Uso de vídeos em background, overlays e efeitos de hover nos cards de performance.
+- **Segurança de Rotas:** Filtro de páginas permitidas (`allowed_pages`) para evitar acesso a arquivos internos.
+- **Tratamento de Erros:** Página 404 personalizada integrada ao fluxo do Flask.
 
-Design Responsivo: Interface limpa e adaptável (CSS Moderno).
+## 🛠️ Tecnologias Utilizadas
 
-🛠️ Tecnologias Utilizadas
-Backend: Flask (Python Framework)
+* **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
+* **Frontend:** HTML5, CSS3 (Flexbox, Grid, Glassmorphism)
+* **Scripts:** JavaScript Vanilla (Manipulação de DOM para o menu)
+* **Versionamento:** Git & GitHub
 
-Banco de Dados: SQLite com Flask-SQLAlchemy.
+## 📂 Estrutura do Projeto
 
-Frontend: HTML5, CSS3 , javaScript e BootStrap(com remoção de marcadores padrão e estilização de menus).
-
-Template Engine: Jinja2 (para renderização dinâmica de páginas).
+```text
+├── app.py              # Arquivo principal (Rotas e lógica Flask)
+├── static/             # Arquivos estáticos
+│   ├── css/            # Estilos (home, races, navbar)
+│   ├── js/             # Scripts (comportamento do menu)
+│   └── img/            # Imagens e vídeos dos carros
+└── templates/          # Arquivos HTML (Jinja2)
+    ├── home.html       # Landing Page
+    ├── Races.html      # Catálogo de modelos
+    └── 404.html        # Página de erro customizada
