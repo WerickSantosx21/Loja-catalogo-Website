@@ -20,7 +20,7 @@ Este é um projeto de catálogo automotivo focado na linha Corvette, desenvolvid
 ## 📂 Estrutura do Projeto
 
 ```text
-├── app.py              # Arquivo principal (Rotas e lógica Flask)
+├── main.py              # Arquivo principal (Rotas e lógica Flask)
 ├── static/             # Arquivos estáticos
 │   ├── css/            # Estilos (home, races, navbar)
 │   ├── js/             # Scripts (comportamento do menu)
@@ -28,4 +28,4 @@ Este é um projeto de catálogo automotivo focado na linha Corvette, desenvolvid
 └── templates/          # Arquivos HTML (Jinja2)
     ├── home.html       # Landing Page
     ├── Races.html      # Catálogo de modelos
-    └── 404.html        # Página de erro customizada
+   
