@@ -1,48 +1,89 @@
-<html>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/Races.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <head>
-        <title>Races</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvette | Races & Lineup</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Races.css') }}">
+</head>
+<body>
 
-        {% include 'navbar.html' %}
-        
-        <!--Informações de carros-->
-        
-        <div class="container-corvette">
+    {% include 'navbar.html' %}
 
-        <div class="coluna-corvette">
-            <div class="card-corvette">
-                <img src="{{ url_for('static', filename='img/corvettedriver.png') }}" alt="num1" class="textdrive">
-                <div class="card-title">Performance com Propósito</div>
-                <div class="card-subtext">Motor V8 de alta tecnologia para aceleração precisa.</div>
-                <div class="card-subtext">Engenharia de ponta para manuseio inigualável.</div>
+    <main class="page-container">
+        <div class="background-overlay"></div>
+
+        <section class="main-content-wrapper">
+            <header class="page-header">
+                <h1 class="main-title">CORVETTE LINEUP</h1>
+                <p class="main-subtitle">A engenharia encontra a emoção pura.</p>
+            </header>
+
+            <div class="cards-grid">
+                <article class="card-item">
+                    <div class="card-media">
+                        <img src="{{ url_for('static', filename='img/corvettedriver.png') }}" alt="Performance Corvette" loading="lazy">
+                        <div class="media-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Performance com Propósito</h2>
+                        <ul class="card-specs">
+                            <li>Motor V8 de alta tecnologia para aceleração precisa.</li>
+                            <li>Engenharia de ponta para manuseio inigualável.</li>
+                        </ul>
+                    </div>
+                    <footer class="card-actions">
+                        <a href="#" class="btn btn-primary">Agende um Test Drive</a>
+                    </footer>
+                </article>
+
+                <article class="card-item">
+                    <div class="card-media">
+                        <img src="{{ url_for('static', filename='img/corvette26.png') }}" alt="Tecnologia Corvette" loading="lazy">
+                        <div class="media-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="card-title">Tecnologia & Conforto</h2>
+                        <ul class="card-specs">
+                            <li>Interior luxuoso aliado a sistemas inteligentes.</li>
+                            <li>Experiência de condução única e personalizada.</li>
+                        </ul>
+                    </div>
+                    <footer class="card-actions">
+                        <a href="#" class="btn btn-outline">Explore a Ficha Técnica</a>
+                    </footer>
+                </article>
             </div>
-            <a href="#" class="btn btn-vermelho">Agende um Test Drive</a>
-        </div>
+        </section>
 
-        <div class="coluna-corvette">
-            <div class="card-corvette">
-                <img src="{{ url_for('static',filename='img/corvette26.png')}}" alt="" class="corvette26">
-                <div class="card-title">Tecnologia & Conforto</div>
-                <div class="card-subtext">Interior luxuoso aliado a sistemas inteligentes.</div>
-                <div class="card-subtext">Experiência de condução única e personalizada.</div>
+        <aside class="sidebar-left">
+            <nav class="social-nav">
+                <a href="https://www.instagram.com/corvette/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/corvette" target="_blank" rel="noopener" aria-label="Twitter">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/Corvette" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </nav>
+        </aside>
+
+        <aside class="sidebar-right">
+            <div class="status-indicator">
+                <span class="status-text">STATUS: ACTIVE</span>
+                <span class="status-dot"></span>
             </div>
-            <a href="#" class="btn btn-cinza">Explore a Ficha Técnica</a>
-        </div>
+            <div class="model-year">MY: 2024</div>
+        </aside>
+    </main>
 
-    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    <div class="redes_sociais">
-        <ul>
-            <li><a href="https://www.facebook.com/Corvette" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com/corvette/" target="_blank">Instagram</a></li>
-            <li><a href="https://twitter.com/corvette" target="_blank">Twitter</a></li>
-        </ul>
-    </div>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}" ></script>
-
-    </body>
+</body>
 </html>

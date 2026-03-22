@@ -1,91 +1,229 @@
-body {
+/* 1. RESET E CONFIGURAÇÕES GERAIS */
+* {
     margin: 0;
     padding: 0;
-    background-color: #000000;
-    color: #ffffff; 
-    font-family: Arial, sans-serif; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 2. CONTAINER PRINCIPAL */
+.page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 0 10%;
+    position: relative;
 }
 
-.container-corvette {
+/* 3. HEADER DA PÁGINA */
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #fff, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-subtitle {
+    color: #888;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+/* 4. GRID DE CARDS */
+.cards-grid {
     display: flex;
+    gap: 40px;
     justify-content: center;
-    gap: 30px;
-    width: 95%; 
-    max-width: 1200px;
-    margin: 20px auto;
-    flex-wrap: wrap; /* Para não quebrar em telas menores */
+    flex-wrap: wrap;
+    z-index: 2;
 }
 
-.card-corvette {
-    background: rgba(255, 255, 255, 0.05); /* Branco bem transparente */
-    backdrop-filter: blur(10px); /* Desfoca o que está atrás */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda bem fina para brilho */
-    border-radius: 15px;
+.card-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: 400px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
+    backdrop-filter: blur(15px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card-corvette:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2); 
+.card-item:hover {
+    transform: translateY(-15px);
+    border-color: #ff2600;
+    box-shadow: 0 20px 40px rgba(255, 38, 0, 0.15);
 }
 
-/* Container para o texto ter padding sem afetar a imagem */
+/* Imagem do Card */
+.card-media {
+    position: relative;
+    height: 250px;
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: 0.5s;
+}
+
+.card-item:hover .card-media img {
+    filter: grayscale(0%);
+    scale: 1.1;
+}
+
+/* Conteúdo do Card */
 .card-content {
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    padding: 30px;
 }
 
 .card-title {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
     margin-bottom: 15px;
-    color: #ffffff;
+    font-weight: 700;
 }
 
-.card-subtext {
-    font-size: 14px;
-    line-height: 1.6; 
-    color: #d1d1d1; 
-    margin-bottom: 25px; 
-    flex-grow: 1; /* Empurra o botão para o final */
+.card-specs {
+    list-style: none;
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Botões */
+.card-actions {
+    padding: 0 30px 30px;
 }
 
 .btn {
-    padding: 12px 24px;
-    border-radius: 5px; 
-    font-weight: bold;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background 0.3s ease; 
-    text-decoration: none; 
-    display: inline-block;
-    text-align: center;
-    width: fit-content; /* Botão não ocupa a largura toda */
-}
-
-.btn-vermelho {
-    background-color: #c02d2d; 
-    color: #ffffff;
-    border: none;
-}
-
-.btn-cinza {
-    background-color: #4a4a4a; 
-    color: #ffffff; 
-    border: none;
-}
-
-img {
-    width: 100%;
-    height: 250px; /* Altura fixa para as fotos ficarem iguais */
-    object-fit: cover; 
     display: block;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background: #ff2600;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #fff;
+    color: #000;
+}
+
+.btn-outline {
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    border-color: #fff;
+}
+
+/* 5. LATERAIS  */
+.sidebar-left, .sidebar-right {
+    position: fixed;
+    bottom: 50px;
+    z-index: 10;
+}
+
+.sidebar-left {
+    left: 40px;
+}
+
+.sidebar-right {
+    right: 40px;
+    text-align: right;
+}
+
+/* Redes Sociais */
+.social-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.social-nav i {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.social-nav i:hover {
+    color: #ff2600;
+    transform: translateX(5px);
+}
+
+/* Status Direita */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.status-text {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #ff2600;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff2600;
+    animation: pulse 1.5s infinite;
+}
+
+.model-year {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* 6. ANIMAÇÕES */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .sidebar-left, .sidebar-right { display: none; }
+    .page-container { padding: 100px 20px; }
 }
