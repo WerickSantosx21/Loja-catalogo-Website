@@ -1,20 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const botao = document.querySelector(".menu-btn");
-    const menu = document.querySelector(".menu-lateral");
+const botao = document.querySelector(".menu-btn");
+const menu = document.querySelector(".menu-lateral");
 
-    if (botao && menu) {
-        botao.addEventListener("click", () => {
-            // Liga/Desliga a classe 'ativo' no menu
-            menu.classList.toggle("ativo");
+botao.addEventListener("click", () => {
+    menu.classList.toggle("ativo");
 
-            // Troca o ícone dependendo se o menu está aberto ou não
-            if (menu.classList.contains("ativo")) {
-                botao.textContent = "✖";
-            } else {
-                botao.textContent = "☰";
-            }
-        });
+    // A lógica de trocar o texto tem que estar aqui dentro!
+    if (menu.classList.contains("ativo")) {
+        botao.textContent = "✖";
     } else {
-        console.error("Botão ou Menu não encontrados! Verifique as classes no HTML.");
+        botao.textContent = "☰";
     }
+
+
+export default function Navbar() {
+    return (
+        <div class="menu-lateral">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/Races">Races</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</div>
+    )
+}
 });
