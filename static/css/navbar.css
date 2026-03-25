@@ -18,11 +18,12 @@
 
 /* 2. LOGO CENTRAL (OPCIONAL, MAS FAZ PARTE DA NAV) */
 .logo-centro {
-    position: fixed;
+    position: absolute;
     top: 7%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
+    
 }
 
 .logo-centro a {
