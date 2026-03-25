@@ -22,7 +22,6 @@ def render_static(page_name):
 #aqui cria uma função para lidar com erros 404.
 @app.errorhandler(404)
 def page_not_found(e):
-    # Se você tiver um arquivo 404.html, ele será usado aqui
     # Se não tiver, o Flask usa o padrão dele para erros 404
     try:
         return render_template('404.html'), 404

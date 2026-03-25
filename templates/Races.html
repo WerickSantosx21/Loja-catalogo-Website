@@ -83,7 +83,41 @@
         </aside>
     </main>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+    <!-- ficha tecnica -->
+   <section class="ficha-tecnica-container">
+    
+    <div class="col-stats">
+        <div class="stat-item">
+            <span class="pulse-bolinha"></span> 
+            <p>0-100 km/h: 2.6 segundos</p>
+        </div>
+        <div class="stat-item">
+            <span class="pulse-bolinha"></span>
+            <p>Motor: V8 LT6 5.5L</p>
+        </div>
+        <div class="stat-item">
+            <span class="pulse-bolinha"></span>
+            <p>Potência: 670 cv</p>
+        </div>
+    </div>
 
-</body>
+    <div class="motor-img-box">
+        <img src="{{ url_for('static', filename='img/motorcorvette.png') }}" alt="Motor Corvette Z06">
+    </div>
+
+    <div class="info-col">
+        <h3>1. O Coração V8</h3>
+        <p>O Corvette é sinônimo de V8. O ronco grave é a assinatura do carro.</p>
+        
+        <h3>2. Revolução Z06</h3>
+        <p>Utiliza um Virabrequim de Plano Flat, tecnologia comum em Ferraris.</p>
+        
+        <h3>3. Motor Central</h3>
+        <p>O peso sobre as rodas traseiras faz o carro "grudar" no chão.</p>
+    </div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </html>
