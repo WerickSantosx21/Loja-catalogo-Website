@@ -16,8 +16,26 @@
         </video>
         <div class="overlay"></div>
     </div>
+  
+    <div class="content">
+        <img src="{{ url_for('static', filename='img/corvete2026ZR.jpg') }}" class="car-image">
+    </div>
 
-   
+    <body>
+
+{% include 'navbar.html' %}
+
+<section class="hero">
+    <video autoplay muted loop class="bg-video">
+        <source src="{{ url_for('static', filename='videos/video1.mp4') }}">
+    </video>
+</section>
+
+<section class="content">
+    <img src="{{ url_for('static', filename='img/corvete2026ZR.jpg') }}">
+</section>
+
+</body>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
