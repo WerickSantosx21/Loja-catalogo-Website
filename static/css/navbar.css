@@ -1,6 +1,5 @@
-/* --- APENAS MENU E BOTÃO LATERAL --- */
+/* MENU BTN */
 
-/* 1. O BOTÃO HAMBÚRGUER (☰) */
 .menu-btn {
     position: fixed;
     top: 20px;
@@ -8,7 +7,7 @@
     font-size: 25px;
     color: white;
     cursor: pointer;
-    z-index: 1001; /* Garante que fique acima de tudo */
+    z-index: 1001;
     transition: transform 0.3s ease;
 }
 
@@ -16,14 +15,14 @@
     transform: scale(0.9);
 }
 
-/* 2. LOGO CENTRAL (OPCIONAL, MAS FAZ PARTE DA NAV) */
+/* LOGO CENTRAL */
+
 .logo-centro {
     position: absolute;
     top: 7%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    
 }
 
 .logo-centro a {
@@ -32,46 +31,18 @@
     font-size: 25px;
     font-weight: 700;
     letter-spacing: 5px;
-    transition: 0.3s;
-    font-family: 'Poppins', sans-serif;
 }
 
 .logo-centro a:hover {
     color: #ff260065;
 }
 
-.botao_ficha{
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+/* MENU LATERAL */
 
-.botao_ficha a{
-    text-decoration: none;
-    color: white;
-    padding: 12px 35px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.botao_ficha a img{
-    width: 35px;
-    height: 240x;
-
-}
-
-.botao_ficha a:hover{
-    background: white;
-    color: black;
-}
-
-/* 3. O MENU LATERAL (A BARRA QUE DESLIZA) */
 .menu-lateral {
     position: fixed;
     top: 0;
-    left: -300px; /* Começa escondido */
+    left: -300px;
     width: 300px;
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
@@ -80,14 +51,12 @@
     z-index: 1000;
 }
 
-/* CLASSE QUE O JS ATIVA */
 .menu-lateral.ativo {
     left: 0;
 }
 
 .menu-lateral ul {
     list-style: none;
-    font-family: system-ui, -apple-system, sans-serif;
 }
 
 .menu-lateral li {
@@ -98,16 +67,16 @@
     color: white;
     text-decoration: none;
     font-size: 18px;
-    transition: 0.3s;
 }
 
 .menu-lateral a:hover {
     color: #ff2800;
 }
 
-/* 4. BOTÕES DE NAVEGAÇÃO LATERAIS (SETAS < >) */
+/* SETAS LATERAIS */
+
 button.esquerda, button.direita {
-    position: fixed; /* Mudei para fixed para não sumir no scroll */
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     width: 35px;

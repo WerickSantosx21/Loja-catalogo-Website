@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
@@ -10,42 +12,85 @@
 
 {% include 'navbar.html' %}
 
-
 <section class="hero">
     <video autoplay muted loop playsinline class="bg-video">
         <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
     </video>
+
+    <div class="overlay"></div>
+
     <div class="botao_ficha">
-        <a href="Races">
-            <img src="{{ url_for('static', filename='img/pin.png') }}" alt="">
+      <a href="{{ url_for('render_static', page_name='Races') }}" class="discover-btn">
+            <div class="seta"></div>
+            <span class="discover-text">DISCOVER</span>
         </a>
     </div>
 </section>
 
 <section class="car-section">
-
     <div class="car-container">
-        <img src="{{ url_for('static', filename='img/corvettezr.jpg') }}" class="car-image">
+        <img src="{{ url_for('static', filename='img/corvettezr.jpg') }}" alt="Corvette ZR 2026" class="car-image">
     </div>
-
+    
     <div class="text-container">
-        <h1>Corvette ZR 2026</h1>
+        <h1>Corvette ZR1X 2026</h1>
         <p>
-            Potência Total: 1.250 CV, combinando um motor V8 biturbo de 5,5 litros e um motor elétrico dianteiro. 
-2
-Aceleração: 0 a 100 km/h em menos de 2 segundos e 0 a 400 metros em menos de 9 segundos. 
-2
-Tração Integral: Sistema de tração integral eletrificada (eAWD) que otimiza a entrega de torque. 
-2
-Bateria: Bateria de 1,9 kWh, recarregada por regeneração, sem necessidade de recarga externa. 
-2
-Plataforma: Baseado na arquitetura do Corvette E-Ray, com atualizações específicas para melhor desempenho. 
-2
-
-Essas especificações destacam o desempenho avançado e a tecnologia híbrida do Corvette ZR1X 2026.
+            Potência total de 1.250 cv, combinando um motor V8 biturbo de 5,5 litros com um motor elétrico dianteiro.
+            Aceleração de 0 a 100 km/h em menos de 2 segundos e 0 a 400 metros em menos de 9 segundos.
+            Tração integral eletrificada (eAWD), que melhora a entrega de torque e o desempenho.
+            Bateria de 1,9 kWh com recarga por regeneração, sem necessidade de carregamento externo.
+            Baseado na arquitetura do Corvette E-Ray, com ajustes específicos para performance extrema.
         </p>
     </div>
+</section>
+<section class="media-section">
+    <div class="media-grid">
 
+        <!-- CARD 1 -->
+        <div class="media-card">
+            <video autoplay muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4">
+            </video>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span>CORVETTE</span>
+                <h2>ZR1</h2>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="media-card">
+            <img src="{{ url_for('static', filename='img/piloto2.jpg') }}" alt="Corvette C8">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span>Gabriel</span>
+                <h2>Bortoleto</h2>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="media-card">
+            <video autoplay muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/corvette2.mp4') }}" type="video/mp4">
+            </video>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span>Speed</span>
+                <h2>TRACK</h2>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="media-card">
+            <img src="{{ url_for('static', filename='img/corvette3.jpg') }}" alt="Corvette Legacy">
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span>Legacy</span>
+                <h2>ICON</h2>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
