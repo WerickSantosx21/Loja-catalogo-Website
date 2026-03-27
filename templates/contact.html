@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
- <head>
-<meta charset="UTF-8">
-  <title>Contato</title>
-  <link rel="stylesheet" href="index.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Contact.css') }}">
 </head>
 <body>
+
+    {% include 'navbar.html' %}
   
-<div class="container">
+    <div class="container">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" class="logo" alt="Logo">
 
- <img src="img/logo.png" class="logo">
- 
-  <!-- LADO ESQUERDO -->
-  <div class="info">
-    <h4>CONTATO</h4>
-    <h1>FALE COM A GENTE</h1>
+        <div class="info">
+            <h4>CONTATO</h4>
+            <h1>FALE COM A GENTE</h1>
+            <p>
+                Tem dúvidas sobre modelos, condições ou agendamento de test ride?
+                Nossa equipe está pronta para te ajudar com atendimento rápido e personalizado.
+            </p>
+            
+            <p>exemplo.trabalho@gmail.com</p>
+            <p>ouvidoriateste@gmail.com</p> 
 
-    <p>
-      Tem dúvidas sobre modelos, condições ou agendamento de test ride?
-      Nossa equipe está pronta para te ajudar com atendimento rápido e personalizado.
-    </p>
+            <h3>Horário de atendimento:</h3>
+            <p>Segunda à Sexta: 7h às 17:30h</p>
+            <p>Sábado: 8h às 12h</p>
+            <p>Domingo: Fechado</p>
+        </div>
 
+        <div class="formulario">
+            <form>
+                <div class="linha">
+                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="Sobrenome">
+                </div>
 
+                <input type="text" placeholder="Telefone">
+                <input type="email" placeholder="Email">
 
-    <h2ontatos:></h2ontatos:>
-    <p>exemplo.trabalho@gmail.com</p>
-    <p>ouvidoriateste@gmail.com</p>
-    <a> <img src="WhatsApp.jpg" alt=""></a>
+                <select>
+                    <option disabled selected>Escolha a loja mais próxima</option>
+                    <option>São Paulo</option>
+                    <option>Belo Horizonte</option>
+                    <option>Rio de Janeiro</option>
+                </select>
 
+                <textarea placeholder="Mensagem"></textarea>
+                <button type="submit">Enviar ▶</button>
+            </form>
+        </div>
+    </div>
 
-    <h3>Horário de atendimento:</h3>
-    <p>Segunda à Sexta: 7h às 17:30h</p>
-    <p>Sábado: 8h às 12h</p>
-    <p>Domingo: Fechado</p>
-  </div>
-
-  <!-- LADO DIREITO -->
-  <div class="formulario">
-    <form>
-
-      <div class="linha">
-        <input type="text" placeholder="Nome">
-        <input type="text" placeholder="Sobrenome">
-      </div>
-
-      <input type="text" placeholder="Telefone">
-      <input type="email" placeholder="Email">
-
-      <select>
-        <option>Escolha a loja mais próxima</option>
-        <option>São Paulo</option>
-        <option>Belo Horizonte</option>
-         <option>Rio de Janeiro</option>
-      </select>
-
-      <textarea placeholder="Mensagem"></textarea>
-
-      <button type="submit">Enviar ▶</button>
-
-    </form>
-  </div>
-
-</div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>

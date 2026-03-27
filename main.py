@@ -9,7 +9,7 @@ def home():
 @app.route('/<page_name>')
 def render_static(page_name):
     # essas são as páginas permitidas para serem renderizadas, metodo de segurança 
-    allowed_pages = ['home', 'Races', 'Contact', 'About']
+    allowed_pages = ['home', 'Races', 'contact', 'About']
 
    
     if page_name in allowed_pages:
