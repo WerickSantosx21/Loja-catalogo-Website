@@ -4,56 +4,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (botao && menu) {
         botao.addEventListener("click", () => {
-            // Liga/Desliga a classe 'ativo' no menu
             menu.classList.toggle("ativo");
-
-            // Troca o ícone dependendo se o menu está aberto ou não
-            if (menu.classList.contains("ativo")) {
-                botao.textContent = "✖";
-            } else {
-                botao.textContent = "☰";
-            }
+            botao.textContent = menu.classList.contains("ativo") ? "✖" : "☰";
         });
-    } else {
-        console.error("Botão ou Menu não encontrados! Verifique as classes no HTML.");
     }
-});
-
-// Faz os cards aparecerem suavemente conforme o scroll
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
 
     const car = document.querySelector(".car-image");
     const text = document.querySelector(".text-container");
 
-    const observer = new IntersectionObserver((entries) => {
+    if (car && text) {
+        const carObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    car.classList.add("show");
+                    text.classList.add("show");
+                } else {
+                    car.classList.remove("show");
+                    text.classList.remove("show");
+                }
+            });
+        }, { threshold: 0.3 });
 
-        entries.forEach(entry => {
+        carObserver.observe(car);
+    }
 
-            if(entry.isIntersecting){
+    const mediaSection = document.querySelector(".media-section");
+    const grupo1 = document.querySelectorAll(".grupo-1");
+    const grupo2 = document.querySelectorAll(".grupo-2");
 
-                car.classList.add("show");
-                text.classList.add("show");
+    if (mediaSection) {
+        const cardsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    grupo1.forEach(card => card.classList.add("show"));
 
-            } else {
+                    setTimeout(() => {
+                        grupo2.forEach(card => card.classList.add("show"));
+                    }, 350);
+                }
+            });
+        }, { threshold: 0.25 });
 
-                car.classList.remove("show");
-                text.classList.remove("show");
-
-            }
-
-        });
-
-    }, { threshold: 0.3 });
-
-    observer.observe(car);
-
+        cardsObserver.observe(mediaSection);
+    }
 });
