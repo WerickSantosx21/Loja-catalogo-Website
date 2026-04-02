@@ -13,27 +13,24 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. CONTAINER PRINCIPAL */
+/* 2. CONTAINER PRINCIPAL E HEADER */
 .page-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding: 0 10%;
-    position: relative;
+    width: 100%;
+    padding: 80px 5% 0; /* Ajustado para não ficar tão longe do topo */
 }
 
-/* 3. HEADER DA PÁGINA */
 .page-header {
     text-align: center;
-    margin-bottom: 50px;
-    animation: fadeInDown 1s ease-out;
+    margin-bottom: 60px;
 }
 
 .main-title {
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
     font-weight: 900;
-    letter-spacing: 10px;
+    letter-spacing: 12px;
     text-transform: uppercase;
     background: linear-gradient(to bottom, #fff, #444);
     -webkit-background-clip: text;
@@ -42,24 +39,34 @@ body {
 
 .main-subtitle {
     color: #888;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-size: 0.9rem;
+    margin-top: 10px;
 }
 
-/* 4. GRID DE CARDS */
+/* 3. GRID DE CARDS PRINCIPAL */
 .cards-grid {
     display: flex;
-    gap: 40px;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite quebrar linha se não couber */
     justify-content: center;
-    flex-wrap: wrap;
-    z-index: 2;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
 }
 
 .card-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    width: 400px;
+    border-radius: 25px;
+    flex: 1;
+    width: 100%; /* Melhorado para telas médias */
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     backdrop-filter: blur(15px);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -71,10 +78,10 @@ body {
     box-shadow: 0 20px 40px rgba(255, 38, 0, 0.15);
 }
 
-/* Imagem do Card */
 .card-media {
     position: relative;
-    height: 250px;
+    height: 280px;
+    overflow: hidden;
 }
 
 .card-media img {
@@ -82,254 +89,247 @@ body {
     height: 100%;
     object-fit: cover;
     filter: grayscale(30%);
-    transition: 0.5s;
+    transition: 0.6s ease;
 }
 
 .card-item:hover .card-media img {
     filter: grayscale(0%);
-    scale: 1.1;
+    transform: scale(1.1);
 }
 
-/* Conteúdo do Card */
-.card-content {
-    padding: 30px;
+.card-content { 
+    padding: 35px; 
+    flex-grow: 1; 
+}
+
+.card-tag {
+    color: #ff2600;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 700;
+    margin: 10px 0 20px;
+    font-weight: 800;
 }
+
+.card-title span { color: #ff2600; }
 
 .card-specs {
     list-style: none;
-    color: #aaa;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 2;
 }
 
-/* Botões */
+.card-specs i {
+    color: #ff2600;
+    margin-right: 10px;
+}
+
 .card-actions {
-    padding: 0 30px 30px;
+    padding: 0 35px 35px;
 }
 
+/* 4. BOTÕES */
 .btn {
-    display: block;
-    text-align: center;
-    padding: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 18px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 0.8rem;
     letter-spacing: 2px;
     transition: 0.3s;
-    border-radius: 5px;
-}
-
-.btn-primary {
-    background: #ff2600;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: #fff;
-    color: #000;
-}
-
-.btn-outline {
-    border: 1px solid #444;
-    color: #fff;
-}
-
-.btn-outline:hover {
-    border-color: #fff;
-}
-
-/* 5. LATERAIS  */
-.sidebar-left, .sidebar-right {
-    position: fixed;
-    bottom: 50px;
-    z-index: 10;
-}
-
-.sidebar-left {
-    left: 40px;
-}
-
-.sidebar-right {
-    right: 40px;
-    text-align: right;
-}
-
-/* Redes Sociais */
-.social-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.social-nav i {
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.3);
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.social-nav i:hover {
-    color: #ff2600;
-    transform: translateX(5px);
-}
-
-/* Status Direita */
-.status-indicator {
-    display: flex;
-    align-items: center;
+    border-radius: 8px;
     gap: 10px;
-    margin-bottom: 10px;
 }
 
-.status-text {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #555;
-}
+.btn-primary { background: #ff2600; color: #fff; }
+.btn-primary:hover { background: #fff; color: #000; }
+.btn-outline { border: 1px solid rgba(255,255,255,0.2); color: #fff; }
+.btn-outline:hover { background: #fff; color: #000; border-color: #fff; }
 
-.status-dot {
-    width: 6px;
-    height: 6px;
-    background: #ff2600;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #ff2600;
-    animation: pulse 1.5s infinite;
-}
-
-.model-year {
-    font-size: 14px;
-    font-weight: bold;
-    color: #444;
-}
-
-/* 6. ANIMAÇÕES */
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-    .sidebar-left, .sidebar-right { display: none; }
-    .page-container { padding: 100px 20px; }
-}
-
-.spec {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 5px;
-}
-
-.status{
-    width: 8px;
-    height: 8px;
-    background-color: #ff2600;
-    border-radius: 50%;
-    display: inline-block;
-    box-shadow: 0 0 8px #ff2600;
-    animation: pulse 1.5s infinite ease-in-out;
-}
-
+/* 5. FICHA TÉCNICA (MOTOR) */
 .ficha-tecnica-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 60px 20px;
+    padding: 120px 8%;
     background-color: #000;
-    color: white;
-    gap: 40px;
-    box-sizing: border-box;
+    gap: 60px;
 }
 
 .col-stats {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 35px;
 }
 
 .stat-item {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .motor-img-box {
-    flex: 1.5; 
+    flex: 1.5;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
-    filter: drop-shadow(0 0 25px rgba(255, 40, 40, 0.4)); 
-    transition: filter 0.3s ease; 
+    filter: drop-shadow(0 0 35px rgba(255, 38, 0, 0.3));
 }
 
 .motor-img-box img {
     width: 100%;
-    max-width: 550px; 
-    height: auto;
-    transition: transform 0.3s ease; 
+    max-width: 600px;
+    transition: 0.5s ease;
 }
 
-/* Efeito Interativo (Hover): Quando passar o mouse, o brilho e o tamanho aumentam */
-.motor-img-box:hover {
-    filter: drop-shadow(0 0 40px rgba(255, 40, 40, 0.7)); 
+.motor-img-box:hover img { transform: rotate(-2deg) scale(1.05); }
+
+.info-col { flex: 1; }
+.info-col h3 { color: #ff2600; margin-bottom: 8px; text-transform: uppercase; font-weight: 800; }
+.info-col p { color: #888; margin-bottom: 25px; line-height: 1.6; }
+
+/* 6. SEÇÕES ADICIONAIS */
+.tech-specs-section, .design-section, .gallery-section {
+    width: 100%;
+    padding: 120px 8%;
 }
 
-.motor-img-box:hover img {
-    transform: scale(1.05); /* A imagem aumenta 5% de tamanho */
+.tech-specs-section { background: #0a0a0a; text-align: center; }
+.tech-specs-section h2 { font-size: 2.5rem; margin-bottom: 60px; letter-spacing: 5px; text-transform: uppercase; }
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.info-col {
-    flex: 1;
-    text-align: left;
+.spec-card {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 50px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
 }
 
-.info-col h3 {
-    font-size: 1.1rem;
-    color: #ff4d4d;
-    margin: 15px 0 5px 0;
+.spec-card:hover { border-color: #ff2600; background: rgba(255, 38, 0, 0.05); }
+.spec-card i { font-size: 2.5rem; color: #ff2600; margin-bottom: 25px; }
+.spec-card h3 { margin-bottom: 10px; font-size: 1.2rem; }
+.spec-card p { color: #888; }
+
+/* DESIGN SECTION */
+.design-section { background: #000; }
+.design-layout {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-.info-col p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #ccc;
+.text-container { flex: 1; }
+.text-container h2 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; }
+.text-container p { color: #888; font-size: 1.1rem; line-height: 1.8; }
+
+.image-container { flex: 1.2; }
+.design-image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
 }
 
-/* 1. Criando a bolinha vermelha */
+/* GALERIA */
+.gallery-section { background: #0a0a0a; text-align: center; }
+.gallery-section h2 { margin-bottom: 50px; text-transform: uppercase; letter-spacing: 4px; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.gallery-image:hover { transform: scale(1.03); filter: brightness(1.2); }
+
+/* 7. SIDEBARS E ANIMAÇÕES */
+.sidebar-left, .sidebar-right {
+    position: fixed;
+    z-index: 100;
+}
+
+.sidebar-left { left: 40px; bottom: 50px; }
+
+.sidebar-right {
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+}
+
+.social-nav { display: flex; flex-direction: column; gap: 25px; }
+.social-nav a { color: rgba(255, 255, 255, 0.3); font-size: 1.3rem; transition: 0.3s; }
+.social-nav a:hover { color: #ff2600; transform: scale(1.2); }
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.status-text { font-size: 0.75rem; letter-spacing: 2px; color: #666; font-weight: bold; }
+.status-dot { width: 8px; height: 8px; background: #850202; border-radius: 50%; box-shadow: 0 0 10px #990202; }
+.model-year { font-size: 0.7rem; color: #333; letter-spacing: 3px; font-weight: 900; }
+
 .pulse-bolinha {
     width: 10px;
     height: 10px;
-    background-color: #ff4d4d; 
+    background-color: #ff2600;
     border-radius: 50%;
-    display: inline-block;
-    
-    /*animação */
-    animation: pulse 1.5s infinite ease-in-out;
+    box-shadow: 0 0 10px #ff2600;
+    animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(1.2); } 
-    100% { opacity: 1; transform: scale(1); }
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.4; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 8. RESPONSIVIDADE FINAL */
+@media (max-width: 1100px) {
+    .ficha-tecnica-container, .design-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    .col-stats, .info-col { width: 100%; align-items: center; }
+    .sidebar-left, .sidebar-right { display: none; }
+}
+
+@media (max-width: 768px) {
+    .page-container { padding-top: 40px; }
+    .cards-grid { flex-direction: column; align-items: center; }
+    .card-item { min-width: 100%; }
 }

@@ -1,31 +1,56 @@
-# 🏎️ Loja-Web
+🏎️ Corvette Experience | High-Performance Catalog
+Uma plataforma imersiva de catálogo automotivo focada na linha Corvette. Este projeto combina a robustez do Python/Flask com uma interface de vanguarda, utilizando técnicas avançadas de Glassmorphism, CSS Grid e Flexbox para entregar uma experiência visual de luxo e alta performance.
 
-Este é um projeto de catálogo automotivo focado na linha Corvette, desenvolvido com **Python** e **Flask**. O site apresenta um design imersivo, utilizando técnicas modernas de CSS e uma arquitetura de rotas dinâmicas para facilitar a expansão do conteúdo.
+💎 Design & UI/UX
+Layout de Cards Bilateral: Evolução de uma lista vertical para um sistema de CSS Grid responsivo, mantendo os cards de performance alinhados lado a lado em resoluções desktop.
 
-## 🚀 Funcionalidades
+Sidebar de Monitoramento: Implementação de uma barra lateral fixa com indicadores de status em tempo real (Status: Active) e metadados do modelo (MY: 2026).
 
-- **Navegação Dinâmica:** Sistema de rotas que carrega páginas automaticamente via parâmetros na URL.
-- **Menu Hamburguer:** Interface responsiva com menu lateral deslizante (Glassmorphism).
-- **Design Imersivo:** Uso de vídeos em background, overlays e efeitos de hover nos cards de performance.
-- **Segurança de Rotas:** Filtro de páginas permitidas (`allowed_pages`) para evitar acesso a arquivos internos.
-- **Tratamento de Erros:** Página 404 personalizada integrada ao fluxo do Flask.
+Glassmorphism Contact: Página de contato robusta com formulários envoltos em cartões de efeito "vidro jateado" e filtros de desfoque dinâmicos.
 
-## 🛠️ Tecnologias Utilizadas
+Micro-interações: Efeitos de hover que expandem as imagens e alteram o contorno para o icônico Vermelho Corvette (#ff2600).
 
-* **Backend:** [Flask](https://flask.palletsprojects.com/) (Python)
-* **Frontend:** HTML5, CSS3 (Flexbox, Grid, Glassmorphism)
-* **Scripts:** JavaScript Vanilla (Manipulação de DOM para o menu)
-* **Versionamento:** Git & GitHub
+⚙️ Engenharia de Software
+Rotas Dinâmicas: Centralização da lógica de navegação no Flask para carregamento inteligente de templates via parâmetros.
 
-## 📂 Estrutura do Projeto
+Segurança de Navegação: Filtro de páginas permitidas (allowed_pages), bloqueando o acesso direto a arquivos sensíveis do sistema.
 
-```text
-├── main.py              # Arquivo principal (Rotas e lógica Flask)
-├── static/             # Arquivos estáticos
-│   ├── css/            # Estilos (home, races, navbar)
-│   ├── js/             # Scripts (comportamento do menu)
-│   └── img/            # Imagens e vídeos dos carros
-└── templates/          # Arquivos HTML (Jinja2)
-    ├── home.html       # Landing Page
-    ├── Races.html      # Catálogo de modelos
-   
+Responsividade Adaptativa: Media queries otimizadas que reorganizam o Grid para colunas únicas em dispositivos móveis, priorizando a legibilidade.
+
+🛠️ Tecnologias Utilizadas
+Backend	Python 3.x + Flask Microframework
+Frontend	HTML5 + Modern CSS (Grid/Flex)
+Efeitos	CSS Backdrop Filters & Glassmorphism
+Ícones	Font Awesome 6.0
+Animações	Transições CSS3 & Keyframes
+Versionamento	Git 
+
+.
+├── main.py                 # Lógica do servidor e rotas Flask
+├── static/                 # Ativos estáticos
+│   ├── css/                # contact.css, home.css, navbar.css, Races.css
+│   ├── img/                # Logos e imagens gerais (corvettezr.jpg, etc)
+│   │   └── imgraces/       # Imagens específicas dos modelos (frente, lateral, tras)
+│   ├── js/                 # Scripts de comportamento (script.js)
+│   └── videos/             # Engine de vídeo (video1.mp4, video2.mp4)
+├── templates/              # Estruturas Jinja2 (HTML dinâmico)
+│   ├── contact.html        # Página de contato
+│   ├── home.html           # Landing page
+│   ├── navbar.html         # Menu global
+│   └── Races.html          # Catálogo de performance
+└── README.md               # Documentação do projeto
+
+Clone o repositório:
+
+Bash
+git clone https://github.com/seu-usuario/loja-web-corvette.git
+
+Inicie o servidor Flask:
+(Certifique-se de ter o Flask instalado: pip install flask)
+
+Bash
+python main.py
+
+Acesse: http://127.0.0.1:5000
+
+Desenvolvido por: Werick Santos | Thiago Antony | Guilherme Laudade

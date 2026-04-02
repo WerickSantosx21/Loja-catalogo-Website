@@ -59,6 +59,156 @@ body{
     font-size: 14px;
     letter-spacing: 3px;
     border-bottom: 1px solid white;
+    padding-bottom: 4px;
+}
+
+.seta{
+    width: 18px;
+    height: 18px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    margin-bottom: 12px;
+    animation: descer 5.0s infinite;
+}
+
+@keyframes descer{
+    0%{
+        transform: rotate(-45deg) translateY(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-45deg) translateY(10px);
+        opacity: 0;
+    }
+}
+
+/* SEÇÃO DO CARRO */
+
+.car-section{
+    min-height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 80px 8%;
+}
+
+.car-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.car-image{
+    width: 100%;
+    max-width: 560px;
+    border-radius: 24px;
+    object-fit: cover;
+
+    opacity: 0;
+    transform: translateX(-120px);
+    transition: all 1s ease;
+}
+
+.text-container{
+    flex: 1;
+    max-width: 600px;
+
+    opacity: 0;
+    transform: translateX(120px);
+    transition: all 1s ease;
+}
+
+.text-container h1{
+    color: black;
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.text-container p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: #222;
+}
+
+/* animações */
+
+.car-image.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.text-container.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* HERO VIDEO */
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.30);
+}
+
+/* BOTÃO DISCOVER */
+
+.botao_ficha{
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.discover-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.discover-text{
+    font-size: 14px;
+    letter-spacing: 3px;
+    border-bottom: 1px solid white;
     padding-bottom: 5px;
 }
 
@@ -150,74 +300,102 @@ body{
 
 .media-section{
     width: 100%;
-    padding: 80px 60px;
-    background: #111;
+    min-height: 100vh;
+    background: #000;
+    padding: 20px;
 }
 
 .media-grid{
+    width: 100%;
+    min-height: calc(100vh - 40px);
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
+    grid-template-rows: repeat(2, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .media-card{
     position: relative;
-    width: 100%;
-    height: 380px;
     overflow: hidden;
+    border-radius: 22px;
     background: #111;
+
+    opacity: 0;
+    transition: transform 0.9s ease, opacity 0.9s ease;
 }
 
+.grupo-1{
+    transform: translateY(80px) translateX(-30px);
+}
+
+.grupo-2{
+    transform: translateY(80px) translateX(30px);
+}
+
+.media-card.show{
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
 
 .media-card img,
 .media-card video{
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 500px;
+    height: 380px;
     object-fit: cover;
     display: block;
+    transition: transform 0.6s ease;
 }
 
+.media-card:hover img,
+.media-card:hover video{
+    transform: scale(1.04);
+}
 
 .card-overlay{
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.10));
+    background: linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.15));
+    z-index: 1;
 }
 
-/* texto dentro do card */
 .card-content{
     position: absolute;
-    left: 30px;
-    bottom: 30px;
+    left: 28px;
+    bottom: 28px;
     z-index: 2;
     color: white;
 }
 
 .card-content span{
     display: block;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
     letter-spacing: 2px;
     margin-bottom: 8px;
     text-transform: uppercase;
 }
 
 .card-content h2{
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 52px;
     line-height: 1;
     margin: 0;
 }
 
-/* hover suave */
-.media-card img,
-.media-card video{
-    transition: transform 0.5s ease;
-}
+/* celular */
+@media (max-width: 900px){
+    .media-grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 320px);
+        min-height: auto;
+    }
 
-.media-card:hover img,
-.media-card:hover video{
-    transform: scale(1.04);
+    .card-content h2{
+        font-size: 34px;
+    }
+
+    .card-content span{
+        font-size: 14px;
+    }
 }

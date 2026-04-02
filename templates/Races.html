@@ -10,13 +10,30 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Races.css') }}">
 </head>
-<body>
-
+    <body>
     {% include 'navbar.html' %}
 
-    <main class="page-container">
-        <div class="background-overlay"></div>
+    <aside class="sidebar-left">
+        <nav class="social-nav">
+            <a href="https://www.instagram.com/corvette/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/corvette" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/Corvette" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </nav>
+    </aside>
 
+    <aside class="sidebar-right">
+    <div class="status-indicator">
+        <span class="status-text">Status: Active</span>
+        <div class="status-dot"></div>
+    </div>
+    <span class="model-year">MY: 2026</span>
+</aside>
+
+    <main class="page-container">
+        </main>
+</body>
+
+    <main class="page-container">
         <section class="main-content-wrapper">
             <header class="page-header">
                 <h1 class="main-title">CORVETTE LINEUP</h1>
@@ -29,95 +46,147 @@
                         <img src="{{ url_for('static', filename='img/corvettedriver.png') }}" alt="Performance Corvette" loading="lazy">
                         <div class="media-overlay"></div>
                     </div>
-                    <div class="card-content">
-                        <h2 class="card-title">Performance com Propósito</h2>
-                        <ul class="card-specs">
-                            <li>Motor V8 de alta tecnologia para aceleração precisa.</li>
-                            <li>Engenharia de ponta para manuseio inigualável.</li>
-                        </ul>
-                    </div>
-                    <footer class="card-actions">
-                        <a href="#" class="btn btn-primary">Agende um Test Drive</a>
-                    </footer>
-                </article>
+                  <section class="main-content-wrapper">
+    <header class="page-header">
+        <h1 class="main-title">CORVETTE LINEUP</h1>
+        <p class="main-subtitle">A engenharia encontra a emoção pura.</p>
+    </header>
 
-                <article class="card-item">
-                    <div class="card-media">
-                        <img src="{{ url_for('static', filename='img/corvette26.png') }}" alt="Tecnologia Corvette" loading="lazy">
-                        <div class="media-overlay"></div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="card-title">Tecnologia & Conforto</h2>
-                        <ul class="card-specs">
-                            <li>Interior luxuoso aliado a sistemas inteligentes.</li>
-                            <li>Experiência de condução única e personalizada.</li>
-                        </ul>
-                    </div>
-                    <footer class="card-actions">
-                        <a href="#" class="btn btn-outline">Explore a Ficha Técnica</a>
-                    </footer>
-                </article>
+    <div class="cards-grid">
+        <article class="card-item glass-card">
+            <div class="card-media">
+                <img src="{{ url_for('static', filename='img/corvettedriver.png') }}" alt="Performance Corvette" loading="lazy">
+                <div class="media-overlay"></div>
             </div>
-        </section>
-
-        <aside class="sidebar-left">
-            <nav class="social-nav">
-                <a href="https://www.instagram.com/corvette/" target="_blank" rel="noopener" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://twitter.com/corvette" target="_blank" rel="noopener" aria-label="Twitter">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="https://www.facebook.com/Corvette" target="_blank" rel="noopener" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </nav>
-        </aside>
-
-        <aside class="sidebar-right">
-            <div class="status-indicator">
-                <span class="status-text">STATUS: ACTIVE</span>
-                <span class="status-dot"></span>
+            
+            <div class="card-content">
+                <div class="card-header-v2">
+                    <span class="card-tag">Z06 RACES</span>
+                    <h2 class="card-title">Performance com <span>Propósito</span></h2>
+                </div>
+                <ul class="card-specs">
+                    <li><i class="fas fa-check"></i> Motor V8 LT6 5.5L para aceleração precisa.</li>
+                    <li><i class="fas fa-check"></i> Engenharia de pista para manuseio inigualável.</li>
+                    <li><i class="fas fa-check"></i> 0-100 km/h em 2.6 segundos.</li>
+                </ul>
             </div>
-            <div class="model-year">MY: 2024</div>
-        </aside>
-    </main>
+            
+            <footer class="card-actions">
+                <a href="#" class="btn btn-primary">Agende um Test Drive <i class="fas fa-chevron-right"></i></a>
+            </footer>
+        </article>
 
-    
-    <!-- ficha tecnica -->
-   <section class="ficha-tecnica-container">
-    
-    <div class="col-stats">
-        <div class="stat-item">
-            <span class="pulse-bolinha"></span> 
-            <p>0-100 km/h: 2.6 segundos</p>
-        </div>
-        <div class="stat-item">
-            <span class="pulse-bolinha"></span>
-            <p>Motor: V8 LT6 5.5L</p>
-        </div>
-        <div class="stat-item">
-            <span class="pulse-bolinha"></span>
-            <p>Potência: 670 cv</p>
-        </div>
+        <article class="card-item glass-card">
+            <div class="card-media">
+                <img src="{{ url_for('static', filename='img/corvette26.png') }}" alt="Tecnologia Corvette" loading="lazy">
+                <div class="media-overlay"></div>
+            </div>
+            
+            <div class="card-content">
+                <div class="card-header-v2">
+                    <span class="card-tag">Z07 LUXURY</span>
+                    <h2 class="card-title">Tecnologia & <span>Conforto</span></h2>
+                </div>
+                <ul class="card-specs">
+                    <li><i class="fas fa-check"></i> Interior luxuoso com materiais premium.</li>
+                    <li><i class="fas fa-check"></i> Experiência de condução personalizada.</li>
+                    <li><i class="fas fa-check"></i> Sistema de infotenimento avançado.</li>
+                </ul>
+            </div>
+            
+            <footer class="card-actions">
+                <a href="#" class="btn btn-outline">Explore a Ficha Técnica <i class="fas fa-info-circle"></i></a>
+            </footer>
+        </article>
     </div>
-
-    <div class="motor-img-box">
-        <img src="{{ url_for('static', filename='img/motorsemfundo.png') }}" alt="Motor Corvette Z06">
-    </div>
-
-    <div class="info-col">
-        <h3>1. O Coração V8</h3>
-        <p>O Corvette é sinônimo de V8. O ronco grave é a assinatura do carro.</p>
-        
-        <h3>2. Revolução Z06</h3>
-        <p>Utiliza um Virabrequim de Plano Flat, tecnologia comum em Ferraris.</p>
-        
-        <h3>3. Motor Central</h3>
-        <p>O peso sobre as rodas traseiras faz o carro "grudar" no chão.</p>
-    </div>
-
 </section>
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </main>
+
+    <section class="ficha-tecnica-container">
+        <div class="col-stats">
+            <div class="stat-item">
+                <span class="pulse-bolinha"></span> 
+                <p>0-100 km/h: 2.6 segundos</p>
+            </div>
+            <div class="stat-item">
+                <span class="pulse-bolinha"></span>
+                <p>Motor: V8 LT6 5.5L</p>
+            </div>
+            <div class="stat-item">
+                <span class="pulse-bolinha"></span>
+                <p>Potência: 670 cv</p>
+            </div>
+        </div>
+
+        <div class="motor-img-box">
+            <img src="{{ url_for('static', filename='img/motorsemfundo.png') }}" alt="Motor Corvette Z06">
+        </div>
+
+        <div class="info-col">
+            <h3>1. O Coração V8</h3>
+            <p>O Corvette é sinônimo de V8. O ronco grave é a assinatura do carro.</p>
+            <h3>2. Revolução Z06</h3>
+            <p>Utiliza um Virabrequim de Plano Flat, tecnologia de competição.</p>
+            <h3>3. Motor Central</h3>
+            <p>Distribuição de peso perfeita para máxima aderência.</p>
+        </div>
+    </section>
+
+    <section class="tech-specs-section">
+        <div class="content-wrapper">
+            <h2>Ficha Técnica Extrema</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Motorização</h3>
+                    <p>V8 Biturbo 5.5L + Motor Elétrico (1.250 cv)</p>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-gauge-high"></i>
+                    <h3>Desempenho</h3>
+                    <p>0-100 km/h: < 2s | 0-400m: < 9s</p>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Eletrificação</h3>
+                    <p>Bateria 1,9 kWh com regeneração ultra-rápida</p>
+                </div>
+                <div class="spec-card">
+                    <i class="fas fa-gears"></i>
+                    <h3>Tração</h3>
+                    <p>Sistema eAWD inteligente de distribuição de torque</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="design-section">
+        <div class="content-wrapper design-layout">
+            <div class="text-container">
+                <h2>Design Aerodinâmico</h2>
+                <p>Cada entrada de ar e cada ângulo da carroceria do ZR1X foi esculpido em túnel de vento para garantir que o carro permaneça colado ao asfalto em velocidades acima de 340 km/h.</p>
+            </div>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='imgraces/lateral.png') }}" alt="Design ZR1X" class="design-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+    <div class="content-wrapper">
+        <h2>Performace</h2>
+        <div class="gallery-grid">
+            <img src="{{ url_for('static', filename='imgraces/corvettefrente.png') }}" alt="Frente" class="gallery-image">
+            <img src="{{ url_for('static', filename='imgraces/corvettelateral.png') }}" alt="Lateral" class="gallery-image">
+            <img src="{{ url_for('static', filename='imgraces/lado.png') }}" alt="Traseira" class="gallery-image">
+            <img src="{{ url_for('static', filename='imgraces/tras.png') }}" alt="Pista" class="gallery-image">
+        </div>
+    </div>
+</section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
 </html>
