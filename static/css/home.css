@@ -59,17 +59,17 @@ body{
     font-size: 14px;
     letter-spacing: 3px;
     border-bottom: 1px solid white;
-    padding-bottom: 4px;
+    padding-bottom: 5px;
 }
 
 .seta{
     width: 18px;
     height: 18px;
     border-left: 2px solid white;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid red;
     transform: rotate(-45deg);
     margin-bottom: 12px;
-    animation: descer 5.0s infinite;
+    animation: descer 3.0s infinite;
 }
 
 @keyframes descer{
@@ -174,7 +174,7 @@ body{
 .media-card img,
 .media-card video{
     width: 100%;
-    height: 380px;
+    height: 500px;
     object-fit: cover;
     display: block;
 }
