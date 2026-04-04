@@ -46,7 +46,8 @@
 <section class="media-section">
     <div class="media-grid">
 
-        <div class="media-card grupo-1">
+        <!-- CARD 1 -->
+        <div class="media-card">
             <video autoplay muted loop playsinline>
                 <source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4">
             </video>
@@ -57,31 +58,34 @@
             </div>
         </div>
 
-        <div class="media-card grupo-1">
-            <img src="{{ url_for('static', filename='img/piloto2.jpg') }}" alt="Gabriel Bortoleto">
+        <!-- CARD 2 -->
+        <div class="media-card">
+            <img src="{{ url_for('static', filename='img/piloto2.jpg') }}" alt="Corvette C8">
             <div class="card-overlay"></div>
             <div class="card-content">
-                <span>GABRIEL</span>
+                <span>Gabriel</span>
                 <h2>Bortoleto</h2>
             </div>
         </div>
 
-        <div class="media-card grupo-2">
+        <!-- CARD 3 -->
+        <div class="media-card">
             <video autoplay muted loop playsinline>
                 <source src="{{ url_for('static', filename='videos/corvette2.mp4') }}" type="video/mp4">
             </video>
             <div class="card-overlay"></div>
             <div class="card-content">
-                <span>SPEED</span>
+                <span>Speed</span>
                 <h2>TRACK</h2>
             </div>
         </div>
 
-        <div class="media-card grupo-2">
+        <!-- CARD 4 -->
+        <div class="media-card">
             <img src="{{ url_for('static', filename='img/corvette3.jpg') }}" alt="Corvette Legacy">
             <div class="card-overlay"></div>
             <div class="card-content">
-                <span>LEGACY</span>
+                <span>Legacy</span>
                 <h2>ICON</h2>
             </div>
         </div>

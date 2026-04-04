@@ -28,6 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
         carObserver.observe(car);
     }
 
+    const mediaCards = document.querySelectorAll(".media-card");
+
+const mediaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+    });
+}, {
+    threshold: 0.30
+});
+
+mediaCards.forEach(card => {
+    mediaObserver.observe(card);
+});
+
     const mediaSection = document.querySelector(".media-section");
     const grupo1 = document.querySelectorAll(".grupo-1");
     const grupo2 = document.querySelectorAll(".grupo-2");
