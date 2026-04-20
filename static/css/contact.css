@@ -89,7 +89,7 @@
 
 .contact-header .tag {
     display: inline-block;
-    color: #f5c400;
+    color: #cb2026;
     font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 4px;
@@ -122,7 +122,7 @@
 
 .contact-header h1 span {
     display: inline-block;
-    color: #f5c400;
+    color: #cb2026;
     text-shadow: 0 0 18px rgba(245, 196, 0, 0.15);
 }
 
