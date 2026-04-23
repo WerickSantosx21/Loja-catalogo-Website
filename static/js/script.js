@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         prevBtn?.addEventListener('click', () => { cur = (cur - 1 + athletes.length) % athletes.length; updateCarousel(-1); });
 
         // Auto-advance
-        setInterval(() => { cur = (cur + 1) % athletes.length; updateCarousel(1); }, 6000);
+        setInterval(() => { cur = (cur + 1) % athletes.length; updateCarousel(1); }, 7000);
 
         updateCarousel(0);
     }

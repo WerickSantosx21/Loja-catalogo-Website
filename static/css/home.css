@@ -54,18 +54,11 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
     to { opacity:1; transform:translateY(0); }
 }
 
-.hero-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 11px;
-    letter-spacing: 5px;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
+
 
 .hero-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(80px, 18vw, 200px);
+    font-size: clamp(45px, 8vw, 95px);
     font-weight: 900;
     font-style: italic;
     line-height: 0.85;
@@ -75,6 +68,7 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
 
 .hero-title .line { display:block; }
 .hero-title .accent { color:#ff2600; -webkit-text-stroke: 0px; text-shadow: 0 0 80px rgba(255,38,0,0.4); }
+
 
 .hero-sub {
     font-family: 'Barlow Condensed', sans-serif;

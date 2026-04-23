@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Red Bull</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,900;1,900&family=Barlow:wght@400&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            background:#050505;color:#fff;
+            font-family:'Barlow',sans-serif;
+            min-height:100vh;display:flex;
+            align-items:center;justify-content:center;
+            flex-direction:column;text-align:center;
+            overflow:hidden;
+        }
+        .big{
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:clamp(180px,30vw,320px);
+            font-weight:900;font-style:italic;
+            line-height:0.85;
+            color:rgba(255,255,255,0.04);
+            position:absolute;
+            user-select:none;
+        }
+        .content{position:relative;z-index:2;}
+        .tag{
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:11px;letter-spacing:5px;color:#ff2600;
+            text-transform:uppercase;display:block;margin-bottom:20px;
+        }
+        h1{
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:clamp(48px,10vw,96px);
+            font-weight:900;font-style:italic;
+            text-transform:uppercase;margin-bottom:16px;
+        }
+        p{color:rgba(255,255,255,0.35);font-size:16px;letter-spacing:2px;margin-bottom:48px;}
+        a{
+            display:inline-block;
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:13px;font-weight:700;
+            letter-spacing:4px;text-transform:uppercase;
+            color:#fff;text-decoration:none;
+            border:1px solid rgba(255,255,255,0.2);
+            padding:16px 40px;
+            transition:background 0.3s,border-color 0.3s;
+        }
+        a:hover{background:#ff2600;border-color:#ff2600;}
+    </style>
+</head>
+<body>
+    <div class="big">404</div>
+    <div class="content">
+        <span class="tag">Página não encontrada</span>
+        <h1>Fora da<br><span style="color:#ff2600">Pista</span></h1>
+        <p>Essa página não existe — mas a corrida continua.</p>
+        <a href="/">VOLTAR AO INÍCIO</a>
+    </div>
+</body>
+</html>
