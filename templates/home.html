@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Red Bull | Gives You Wings</title>
+    <meta name="description" content="Red Bull — energia, velocidade e adrenalina. Conheça atletas, eventos e o universo Red Bull.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
-
 <body>
 
 {% include 'navbar.html' %}
@@ -18,100 +20,157 @@
     <video autoplay muted loop playsinline class="bg-video">
         <source src="{{ url_for('static', filename='videos/REDBULL.mp4') }}" type="video/mp4">
     </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-noise"></div>
 
-    <div class="overlay"></div>
-
-    <div class="botao_ficha">
-        <a href="{{ url_for('render_static', page_name='Races') }}" class="discover-btn">
-            <div class="seta"></div>
-            <span class="discover-text">DISCOVER</span>
-        </a>
+    <div class="hero-content">
+        <p class="hero-eyebrow">EST. 1987 · ENERGY · SPEED · CULTURE</p>
+        <h1 class="hero-title">
+            <span class="line">RED</span>
+            <span class="line accent">BULL</span>
+        </h1>
+        <p class="hero-sub">Gives You Wings</p>
     </div>
+
+    <a href="/Races" class="hero-scroll">
+        <span class="scroll-label">DISCOVER</span>
+        <span class="scroll-arrow"></span>
+    </a>
+
+    <div class="hero-corner tl">RB·WORLD</div>
+    <div class="hero-corner tr">2026</div>
 </section>
 
-<section class="athlete-carousel">
-    <button class="carousel-arrow left" id="prevBtn">&#10094;</button>
+<!-- TICKER -->
+<div class="ticker-wrap">
+    <div class="ticker">
+        <span>MORE ENERGY</span><span class="sep">✦</span>
+        <span>ADRENALINE</span><span class="sep">✦</span>
+        <span>WINGS</span><span class="sep">✦</span>
+        <span>ENERGY DRINK</span><span class="sep">✦</span>
+        <span>FOCUS</span><span class="sep">✦</span>
+        <span>GIVES YOU WINGS</span><span class="sep">✦</span>
+        <span>E-SPORTS</span><span class="sep">✦</span>
+        <span>FORMULA 1</span><span class="sep">✦</span>
+        <span>MORE ENERGY</span><span class="sep">✦</span>
+        <span>ADRENALINE</span><span class="sep">✦</span>
+        <span>WINGS</span><span class="sep">✦</span>
+        <span>ENERGY DRINK</span><span class="sep">✦</span>
+        <span>FOCUS</span><span class="sep">✦</span>
+        <span>GIVES YOU WINGS</span><span class="sep">✦</span>
+        <span>E-SPORTS</span><span class="sep">✦</span>
+        <span>MORE ENERGY</span><span class="sep">✦</span>
+    </div>
+</div>
 
-    <div class="carousel-content">
+<!-- ATHLETES CAROUSEL -->
+<section class="athlete-carousel" id="athletes">
+    <div class="carousel-side left">
+        <button class="carousel-arrow" id="prevBtn">&#10094;</button>
+    </div>
+
+    <div class="carousel-stage">
         <div class="carousel-text">
             <span class="carousel-tag" id="athleteSport">FÓRMULA 1</span>
-            <h2 id="athleteTitle">Max Verstappen domina mais uma corrida</h2>
-            <p id="athleteDesc">
-                Max segue como um dos nomes mais fortes da categoria, unindo agressividade,
-                técnica e consistência em alto nível.
-            </p>
-            <a href="{{ url_for('render_static', page_name='Races') }}" class="carousel-link" id="athleteLink">
-                VEJA MAIS
-                <span class="arrow-circle">&#10095;</span>
+            <h2 class="carousel-title" id="athleteTitle">Max Verstappen<br>domina a F1</h2>
+            <p class="carousel-desc" id="athleteDesc">Max segue como um dos nomes mais fortes da categoria, unindo agressividade, técnica e consistência em alto nível.</p>
+            <a href="/Races" class="carousel-cta" id="athleteLink">
+                VEJA MAIS <span class="cta-arrow">→</span>
             </a>
         </div>
-
-        <div class="carousel-image-box">
-            <img id="athleteImage" src="{{ url_for('static', filename='img/maxverstappen.jpg') }}" alt="Max Verstappen">
+        <div class="carousel-visual">
+            <div class="img-frame">
+                <img id="athleteImage" src="{{ url_for('static', filename='img/maxverstappen.jpg') }}" alt="Atleta">
+            </div>
+            <div class="img-number" id="athleteNum">01</div>
         </div>
     </div>
 
-    <button class="carousel-arrow right" id="nextBtn">&#10095;</button>
+    <div class="carousel-side right">
+        <button class="carousel-arrow" id="nextBtn">&#10095;</button>
+    </div>
+
+    <div class="carousel-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
 </section>
 
-<!-- MEDIA SECTION -->
-<section class="media-section">
-    <div class="media-box">
-        <div class="media-grid">
-
-            <div class="media-card grupo-1">
-                <img class="card-image" src="{{ url_for('static', filename='img/shrek.jpg') }}">
-                <video class="card-video" muted loop playsinline>
-                    <source src="{{ url_for('static', filename='videos/originalred.mp4') }}">
-                </video>
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span>RedBull</span>
-                    <h2>Origin</h2>
-                </div>
+<!-- MEDIA GRID -->
+<section class="media-section" id="media">
+    <div class="media-header">
+        <h2>THE <em>WORLD</em></h2>
+        <p>Energia em cada frame.</p>
+    </div>
+    <div class="media-grid">
+        <div class="media-card grupo-1">
+            <img class="card-image" src="{{ url_for('static', filename='img/maxverstappen.jpg') }}" alt="RedBull Origin">
+            <video class="card-video" muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/originalred.mp4') }}">
+            </video>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span class="card-label">RedBull</span>
+                <h2 class="card-name">Origin</h2>
             </div>
-
-            <div class="media-card grupo-2">
-                <img class="card-image" src="{{ url_for('static', filename='img/shrek.jpg') }}">
-                <video class="card-video" muted loop playsinline>
-                    <source src="{{ url_for('static', filename='videos/sugarfree.mp4') }}">
-                </video>
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span>RedBull</span>
-                    <h2>Sugarfree</h2>
-                </div>
-            </div>
-
-            <div class="media-card grupo-1">
-                <img class="card-image" src="{{ url_for('static', filename='img/shrek.jpg') }}">
-                <video class="card-video" muted loop playsinline>
-                    <source src="{{ url_for('static', filename='videos/corvette2.mp4') }}">
-                </video>
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span>Speed</span>
-                    <h2>TRACK</h2>
-                </div>
-            </div>
-
-            <div class="media-card grupo-2">
-                <img class="card-image" src="{{ url_for('static', filename='img/shrek.jpg') }}">
-                <video class="card-video" muted loop playsinline>
-                    <source src="{{ url_for('static', filename='videos/corvette2.mp4') }}">
-                </video>
-                <div class="card-overlay"></div>
-                <div class="card-content">
-                    <span>Legacy</span>
-                    <h2>ICON</h2>
-                </div>
-            </div>
-
         </div>
+
+        <div class="media-card grupo-2">
+            <img class="card-image" src="{{ url_for('static', filename='img/maxverstappen.jpg') }}" alt="Sugar Free">
+            <video class="card-video" muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/sugarfree.mp4') }}">
+            </video>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span class="card-label">RedBull</span>
+                <h2 class="card-name">Sugar Free</h2>
+            </div>
+        </div>
+
+        <div class="media-card grupo-1">
+            <img class="card-image" src="{{ url_for('static', filename='img/Neymar.jpg') }}" alt="Speed">
+            <video class="card-video" muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/corvette2.mp4') }}">
+            </video>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span class="card-label">Speed</span>
+                <h2 class="card-name">Track</h2>
+            </div>
+        </div>
+
+        <div class="media-card grupo-2">
+            <img class="card-image" src="{{ url_for('static', filename='img/gaules.jpg') }}" alt="Legacy">
+            <video class="card-video" muted loop playsinline>
+                <source src="{{ url_for('static', filename='videos/corvette2.mp4') }}">
+            </video>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <span class="card-label">Legacy</span>
+                <h2 class="card-name">Icon</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto-section">
+    <div class="manifesto-inner">
+        <p class="manifesto-text">
+            <span class="word">Não</span>
+            <span class="word">é</span>
+            <span class="word accent">só</span>
+            <span class="word">uma</span>
+            <span class="word accent">bebida.</span>
+            <span class="word">É</span>
+            <span class="word">um</span>
+            <span class="word accent">estado</span>
+            <span class="word">de</span>
+            <span class="word accent">espírito.</span>
+        </p>
+        <a href="/contact" class="manifesto-cta">FALE COM A GENTE</a>
     </div>
 </section>
 
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-
 </body>
 </html>

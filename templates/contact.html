@@ -1,128 +1,103 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato | Red Bull Racing</title>
-
+    <title>Red Bull | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Contact.css') }}">
 </head>
 <body>
+{% include 'navbar.html' %}
 
-    {% include 'navbar.html' %}
+<main class="main-contact">
+    <div class="bg-glow red"></div>
+    <div class="bg-glow blue"></div>
+    <div class="diagonal d1"></div>
+    <div class="diagonal d2"></div>
 
-    <main class="main-contact">
-        <div class="bg-overlay"></div>
-        <div class="bg-light blue-light"></div>
-        <div class="bg-light red-light"></div>
-        <div class="diagonal diagonal-1"></div>
-        <div class="diagonal diagonal-2"></div>
-
-        <section class="contact-wrapper">
-            <div class="info-section">
-                <header class="contact-header">
-                    <span class="tag">RED BULL RACING</span>
-                    <h1>
-                        FALE COM O
-                        <span>TIME</span>
-                    </h1>
-                    <p>
-                        Tem dúvidas, propostas, parcerias ou quer falar com nossa equipe?
-                        Preencha o formulário e entre em contato com a gente.
-                    </p>
-                </header>
-
-                <div class="contact-cards">
-                    <div class="detail-item">
-                        <div class="icon-box">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="detail-text">
-                            <h3>Email</h3>
-                            <p>contato@redbullracing.com</p>
-                            <p>suporte@redbullracing.com</p>
-                        </div>
+    <section class="contact-wrapper">
+        <div class="info-section">
+            <header class="contact-header">
+                <span class="tag">RED BULL RACING</span>
+                <h1>FALE COM<br>O <em>TIME</em></h1>
+                <p>Dúvidas, propostas, parcerias — a equipe Red Bull está pronta para ouvir você.</p>
+            </header>
+            <div class="contact-cards">
+                <div class="detail-item">
+                    <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                    <div class="detail-text">
+                        <h3>Email</h3>
+                        <p>contato@redbullracing.com</p>
+                        <p>suporte@redbullracing.com</p>
                     </div>
-
-                    <div class="detail-item">
-                        <div class="icon-box">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="detail-text">
-                            <h3>Horário de atendimento</h3>
-                            <p>Segunda à Sexta: <strong>7h às 17h30</strong></p>
-                            <p>Sábado: <strong>8h às 12h</strong></p>
-                            <p>Domingo: <span class="closed">Fechado</span></p>
-                        </div>
+                </div>
+                <div class="detail-item">
+                    <div class="icon-box"><i class="fas fa-clock"></i></div>
+                    <div class="detail-text">
+                        <h3>Atendimento</h3>
+                        <p>Seg–Sex: <strong>7h às 17h30</strong></p>
+                        <p>Sáb: <strong>8h às 12h</strong> · Dom: <span class="closed">Fechado</span></p>
                     </div>
-
-                    <div class="detail-item">
-                        <div class="icon-box">
-                            <i class="fas fa-location-dot"></i>
-                        </div>
-                        <div class="detail-text">
-                            <h3>Base principal</h3>
-                            <p>São Paulo</p>
-                            <p>Atendimento nacional</p>
-                        </div>
+                </div>
+                <div class="detail-item">
+                    <div class="icon-box"><i class="fas fa-location-dot"></i></div>
+                    <div class="detail-text">
+                        <h3>Base</h3>
+                        <p>São Paulo · Atendimento nacional</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="form-section">
-                <div class="form-card">
-                    <div class="form-top-line"></div>
-
-                    <form>
-                        <div class="input-group">
-                            <div class="input-single">
-                                <label>Nome</label>
-                                <input type="text" placeholder="Digite seu nome" required>
-                            </div>
-
-                            <div class="input-single">
-                                <label>Sobrenome</label>
-                                <input type="text" placeholder="Digite seu sobrenome" required>
-                            </div>
+        <div class="form-section">
+            <div class="form-card">
+                <div class="form-top-line"></div>
+                <form>
+                    <div class="input-row">
+                        <div class="field">
+                            <label>Nome</label>
+                            <input type="text" placeholder="Seu nome" required>
                         </div>
-
-                        <div class="input-single">
-                            <label>Telefone</label>
-                            <input type="tel" placeholder="(00) 00000-0000">
+                        <div class="field">
+                            <label>Sobrenome</label>
+                            <input type="text" placeholder="Seu sobrenome" required>
                         </div>
-
-                        <div class="input-single">
-                            <label>Email</label>
-                            <input type="email" placeholder="Digite seu email" required>
-                        </div>
-
-                        <div class="input-single">
-                            <label>Unidade</label>
-                            <select required>
-                                <option value="" disabled selected>Escolha a unidade mais próxima</option>
-                                <option>São Paulo</option>
-                                <option>Belo Horizonte</option>
-                                <option>Rio de Janeiro</option>
-                            </select>
-                        </div>
-
-                        <div class="input-single">
-                            <label>Mensagem</label>
-                            <textarea placeholder="Escreva sua mensagem..." rows="5"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-submit">
-                            ENVIAR MENSAGEM
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="field">
+                        <label>Telefone</label>
+                        <input type="tel" placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="field">
+                        <label>Unidade</label>
+                        <select required>
+                            <option value="" disabled selected>Escolha a unidade</option>
+                            <option>São Paulo</option>
+                            <option>Belo Horizonte</option>
+                            <option>Rio de Janeiro</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Mensagem</label>
+                        <textarea placeholder="Escreva sua mensagem..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        ENVIAR MENSAGEM <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
