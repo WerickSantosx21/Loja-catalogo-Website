@@ -412,3 +412,10 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
 @media (hover: hover) {
     body { cursor: none; }
 }
+
+@media (max-width: 420px) {
+    .hero-title .accent { font-size: 0.9em; }
+    .hero-title .line { font-size: 42px; line-height: 0.9; }
+    .hero-sub { font-size: 12px; letter-spacing: 4px; }
+
+}
