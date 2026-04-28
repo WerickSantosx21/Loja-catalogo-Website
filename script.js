@@ -107,25 +107,25 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             sport: 'FÓRMULA 1',
             title: 'Max Verstappen\ndomina a F1',
-            desc: 'Max Verstappen domina a F1 com maestria, conquistando títulos e quebrando recordes com agressividade e consistência incomparáveis.',
+            desc: 'Max Verstappen domina a F1 com maestria, conquistando títulos e quebrando recordes com agressividade e consistência incomparáveis. Para Verstappen, cada corrida é uma batalha onde ele demonstra sua habilidade excepcional, superando desafios e deixando uma marca indelével na história do automobilismo.',
             image: 'img/maxverstappen.jpg'
         },
         {
             sport: 'FUTEBOL',
             title: 'Neymar Jr.\nmaior artilheiro',
-            desc: 'Neymar ultrapassa Pelé e faz história como maior artilheiro da Seleção Brasileira.',
+            desc: 'Neymar ultrapassa Pelé e faz história como maior artilheiro da Seleção Brasileira, com dribles e gols inesquecíveis. aos pés de Neymar, o futebol se torna arte, e cada gol é uma obra-prima que eterniza seu nome na história do esporte.',
             image: 'img/Neymar.jpg'
         },
         {
             sport: 'ESQUI ALPINO',
             title: 'Lucas Braathen\nsurpreende o mundo',
-            desc: 'Brasileiro se destaca nas Olimpíadas de inverno.',
+            desc: 'Brasileiro se destaca nas Olimpíadas de inverno. Com habilidade e coragem, Lucas Braathen desafia as expectativas e conquista o respeito do mundo do esqui, mostrando que o talento brasileiro pode brilhar até nas pistas mais geladas.',
             image: 'img/lucas.jpg'
         },
         {
             sport: 'E-SPORTS',
             title: 'Gaules\ndomina a cena',
-            desc: 'Um dos maiores nomes do e-sports.',
+            desc: 'Um dos maiores nomes do e-sports. Com habilidade excepcional e carisma único, Gaules conquista fãs ao redor do mundo, elevando o cenário competitivo a novos patamares e inspirando uma geração de jogadores a sonhar grande.',
             image: 'img/gaules.jpg'
         }
     ];
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(() => {
             cur = (cur + 1) % athletes.length;
             updateCarousel();
-        }, 9000);
+        }, 15000);
 
         updateCarousel();
     }

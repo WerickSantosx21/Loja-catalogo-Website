@@ -401,7 +401,8 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
 @media(max-width:950px) {
     .athlete-carousel { grid-template-columns:50px 1fr 50px; }
     .carousel-stage { grid-template-columns:1fr; gap:40px; padding:60px 0; }
-    .img-frame { aspect-ratio:16/10; max-width:100%; }
+    .img-frame { aspect-ratio:1/1.2;}
+    .img-frame img { object-position:top; }
     .img-number { display:none; }
     .hero-title { font-size:clamp(60px,22vw,120px); }
 }
