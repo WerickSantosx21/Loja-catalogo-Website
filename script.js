@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(() => {
             cur = (cur + 1) % athletes.length;
             updateCarousel();
-        }, 7000);
+        }, 9000);
 
         updateCarousel();
     }
