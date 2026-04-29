@@ -37,8 +37,6 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
     );
 }
 
-
-
 .hero-content {
     position: relative;
     z-index: 2;
