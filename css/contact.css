@@ -88,8 +88,8 @@ body {
     50% { r:22; opacity:0; }
 }
 
-.pin-dot { fill: rgba(255,38,0,.5); transition: fill .3s; }
-.pin-center { fill: #ff2600; filter: drop-shadow(0 0 4px #ff2600); }
+.pin-dot { fill: rgba(92, 19, 6, 0.986); transition: fill .3s; }
+.pin-center { fill: #FF0C49; filter: drop-shadow(0 0 4px #ff2600); }
 .map-pin:hover .pin-dot { fill: rgba(255,38,0,.9); }
 .map-pin:hover .pin-center { filter: drop-shadow(0 0 8px #ff2600); }
 
@@ -116,13 +116,6 @@ body {
 .tt-name { display:block; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700; color:#fff; }
 .tt-city { display:block; font-size:12px; color:var(--muted); margin-top:2px; }
 
-/* Legenda */
-.map-legend { display:flex; gap:24px; margin-top:28px; }
-.legend-item { display:flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:2px; color:var(--muted); text-transform:uppercase; }
-.leg-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-.leg-dot.live { background:#ff2600; box-shadow:0 0 8px #ff2600; animation:pinPulse 1.5s infinite; }
-.leg-dot.soon { background:#f5c400; }
-.leg-dot.upcoming { background:rgba(255,255,255,.3); }
 
 /* ── EVENTS PANEL ── */
 .events-panel {
@@ -171,8 +164,8 @@ body {
 
 /* ── ESTADOS D3 ── */
 .estado {   
-    fill: #302d2da6;
-    stroke: rgb(0, 0, 0);
+    fill: #05032e;
+    stroke:  #a53614;
     stroke-width: 0.8px;
     stroke-linejoin: round;
     transition: fill .3s;    
@@ -180,9 +173,11 @@ body {
 }
 .estado:hover,
 .estado-ativo {
-    fill: rgba(255,38,0,.18);
-    stroke: rgba(255,38,0,.4);
+    fill: rgb(255, 196, 0);
+    stroke: rgb(224, 168, 14);
 }
+
+
 
 /* ── RESPONSIVE ── */
 @media(max-width: 960px) {
