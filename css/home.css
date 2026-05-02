@@ -407,6 +407,8 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
 @media(max-width:640px) {
     .media-grid { grid-template-columns:1fr; }
     .manifesto-text { font-size:clamp(28px,8vw,48px); }
+    .cursor { display:none; }
+    .cursor-ring { display:none; }
 }
 @media (hover: hover) {
     body { cursor: none; }

@@ -477,4 +477,6 @@ body {
     .gallery-grid { grid-template-columns:1fr; }
     .gallery-item.large { grid-column:span 1; }
     .tech-grid { grid-template-columns:1fr; }
+    .cursor { display:none; }
+    .cursor-ring { display:none; }
 }
