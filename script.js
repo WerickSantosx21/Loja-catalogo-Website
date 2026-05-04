@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 carousel.classList.remove('out');
-            }, 400);
+            }, 700);
         }
 
         nextBtn?.addEventListener('click', () => {
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(() => {
             cur = (cur + 1) % athletes.length;
             updateCarousel();
-        }, 15000);
+        }, 20000);
 
         updateCarousel();
     }

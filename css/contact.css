@@ -73,7 +73,7 @@ body {
 
 .map-wrap { position:relative; width:100%; max-width:460px; }
 
-.brazil-map { width:100%; height:auto; display:block; }
+.brazil-map { width:135%; height:auto; display:block;}
 
 /* Pins */
 .map-pin { cursor: pointer; }
