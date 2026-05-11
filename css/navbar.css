@@ -13,7 +13,10 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
     justify-content: space-between;
     padding: 0 32px;
     z-index: 1000;
+    /* ADICIONE A LINHA ABAIXO */
+    background: #000000; 
     transition: background 0.4s ease;
+    
 }
 
 .navbar.scrolled {
@@ -38,7 +41,7 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
     display: block;
     width: 24px;
     height: 2px;
-    background: #fff;
+    background: #e2e2e2;
     transition: 0.35s cubic-bezier(0.77,0,0.175,1);
     transform-origin: center;
 }
@@ -48,17 +51,17 @@ body:has(a:hover) .cursor-ring { width:56px; height:56px; border-color:#ff2600; 
 .menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Logo */
+/* Logo */
 .logo-centro a {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 900;
     font-size: 22px;
     letter-spacing: 6px;
-    color: #fff;
+    color: #ffffff; /* <--- Mudei aqui de #000000 para #ffffff */
     text-decoration: none;
     transition: color 0.3s;
 }
 .logo-centro a:hover { color: #ff2600; }
-
 /* Status */
 .nav-right { display: flex; align-items: center; }
 .nav-status {
