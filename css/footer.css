@@ -1,0 +1,106 @@
+/* PALETA DE CORES RED BULL */
+:root {
+    --rb-dark-blue: #000b29;
+    --rb-red: #ed1c24;
+    --rb-silver: #dbdde1;
+    --rb-yellow: #ffcc00;
+    --white: #ffffff;
+    --gray-text: #888888;
+}
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    color: white;
+    
+}
+
+/* FOOTER PRINCIPAL */
+footer {
+    background-color: var(--rb-dark-blue);
+    color: var(--white);
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-top: 5px solid var(--rb-red);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* LOGO TIPO RED BULL */
+.brand-logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.brand-logo span {
+    color: var(--rb-red);
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    color: var(--rb-silver);
+}
+
+/* SOCIAL MEDIA ROW */
+.footer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* ESTILO DOS ÍCONES */
+.social-icon {
+    font-size: 26px;
+    color: var(--white);
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* EFEITO AO PASSAR O RATO (HOVER) */
+.social-icon:hover {
+    background-color: var(--rb-red);
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: 0 10px 20px rgba(237, 28, 36, 0.4);
+}
+
+/* COPYRIGHT SECTION */
+footer p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    font-family: sans-serif;
+}
+
+/* RESPONSIVIDADE PARA TELEMÓVEIS */
+@media (max-width: 600px) {
+    .footer-row { gap: 15px; }
+    .social-icon { width: 50px; height: 50px; font-size: 20px; }
+}
