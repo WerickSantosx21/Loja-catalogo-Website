@@ -62,7 +62,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     margin-bottom: 40px;
 }
 
@@ -98,6 +98,8 @@ footer p {
     padding-top: 25px;
     font-family: sans-serif;
 }
+
+
 
 /* RESPONSIVIDADE PARA TELEMÓVEIS */
 @media (max-width: 600px) {

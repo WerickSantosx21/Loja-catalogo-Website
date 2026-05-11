@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, { threshold: 0.4 }).observe(manifesto);
     }
-
+    
 
     /* ===== GSAP ===== */
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
