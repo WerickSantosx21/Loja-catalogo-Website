@@ -1,108 +1,119 @@
-/* PALETA DE CORES RED BULL */
-:root {
-    --rb-dark-blue: #000b29;
-    --rb-red: #ed1c24;
-    --rb-silver: #dbdde1;
-    --rb-yellow: #ffcc00;
-    --white: #ffffff;
-    --gray-text: #888888;
+/* ── FOOTER ── */
+.site-footer {
+    background: #000;
+    border-top: 1px solid rgba(255,38,0,.2);
+    font-family: 'Barlow', sans-serif;
+    overflow: hidden;
 }
 
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial Black', Gadget, sans-serif;
-    
-    
-}
-
-/* FOOTER PRINCIPAL */
-footer {
-    background-color: var(--rb-dark-blue);
-    color: var(--white);
-    padding: 60px 20px 40px;
-    text-align: center;
-    border-top: 5px solid var(--rb-red);
-}
-
-.footer-container {
-    max-width: 1200px;
+/* Inner */
+.footer-inner {
+    max-width: 1300px;
     margin: 0 auto;
+    padding: 60px 8% 40px;
 }
 
-/* LOGO TIPO RED BULL */
-.brand-logo {
-    font-size: 2.5rem;
+/* Top row */
+.footer-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* Brand */
+.footer-brand { display: flex; flex-direction: column; gap: 8px; }
+.fb-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
     font-weight: 900;
+    font-style: italic;
     letter-spacing: -2px;
     text-transform: uppercase;
-    font-style: italic;
-    margin-bottom: 20px;
+    color: #fff;
+    line-height: 1;
 }
-
-.brand-logo span {
-    color: var(--rb-red);
-}
-
-h2 {
-    font-size: 1.2rem;
+.fb-logo em { color: #ff2600; font-style: italic; }
+.fb-tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,.3);
     text-transform: uppercase;
+}
+
+/* Nav */
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 4px;
+}
+.footer-nav a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 3px;
-    margin-bottom: 30px;
-    color: var(--rb-silver);
-}
-
-/* SOCIAL MEDIA ROW */
-.footer-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-/* ESTILO DOS ÍCONES */
-.social-icon {
-    font-size: 26px;
-    color: var(--white);
+    text-transform: uppercase;
+    color: rgba(255,255,255,.35);
     text-decoration: none;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: color .3s, padding-left .3s;
+}
+.footer-nav a:hover { color: #ff2600; padding-left: 8px; }
+
+/* Socials */
+.footer-socials { display: flex; flex-direction: column; gap: 16px; }
+.fs-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.25);
+}
+.fs-row { display: flex; gap: 10px; }
+.fs-btn {
+    width: 42px; height: 42px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,.4);
+    font-size: 15px;
+    text-decoration: none;
+    transition: background .3s, color .3s, border-color .3s, transform .2s;
+}
+.fs-btn:hover {
+    background: #ff2600;
+    border-color: #ff2600;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Bottom */
+.footer-bottom {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 32px;
 }
-
-/* EFEITO AO PASSAR O RATO (HOVER) */
-.social-icon:hover {
-    background-color: var(--rb-red);
-    transform: scale(1.2) rotate(8deg);
-    box-shadow: 0 10px 20px rgba(237, 28, 36, 0.4);
+.fb-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,.2);
+    letter-spacing: 1px;
 }
-
-/* COPYRIGHT SECTION */
-footer p {
-    font-size: 0.85rem;
-    color: var(--gray-text);
-    margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 25px;
-    font-family: sans-serif;
+.fb-dot { color: rgba(255,255,255,.1); }
+.fb-made {
+    font-size: 12px;
+    color: rgba(255,255,255,.15);
+    letter-spacing: 1px;
 }
+.fb-made em { color: #ff2600; font-style: normal; }
 
-
-
-/* RESPONSIVIDADE PARA TELEMÓVEIS */
-@media (max-width: 600px) {
-    .footer-row { gap: 15px; }
-    .social-icon { width: 50px; height: 50px; font-size: 20px; }
+/* Responsive */
+@media(max-width: 768px) {
+    .footer-top { flex-direction: column; gap: 36px; }
+    .footer-bottom { justify-content: center; text-align: center; }
 }
